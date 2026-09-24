@@ -1,0 +1,18 @@
+{
+  "write_priority": true,
+  "wait_limit": 5,
+  "max_readers": 2,
+  "wait_invariant": true,
+  "events": [
+    {"op": "read", "txn": "r1", "at": 0},
+    {"op": "read", "txn": "r2", "at": 0},
+    {"op": "write", "txn": "w1", "at": 1},
+    {"op": "read", "txn": "r3", "at": 2},
+    {"op": "release", "txn": "r1", "at": 3},
+    {"op": "release", "txn": "r2", "at": 4},
+    {"op": "release", "txn": "w1", "at": 6},
+    {"op": "write", "txn": "w2", "at": 7},
+    {"op": "read", "txn": "r4", "at": 12},
+    {"op": "release", "txn": "r3", "at": 14}
+  ]
+}
